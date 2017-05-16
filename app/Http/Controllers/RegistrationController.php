@@ -17,6 +17,11 @@ class RegistrationController extends Controller
         return view('registration.create');
     }
 
+    public function deny()
+    {
+        return view('registration.deny');
+    }
+
     public function store()
     {
         $this->validate(request(), [

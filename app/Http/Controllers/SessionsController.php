@@ -33,7 +33,7 @@ class SessionsController extends Controller
         return redirect()->home();
     }
 
-    public function destory()
+    public function destroy()
     {
         auth()->logout();
         return redirect()->home();
