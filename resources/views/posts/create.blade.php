@@ -12,7 +12,7 @@
     <textarea type="text" class="form-control" id="body" placeholder="Body" name="body" required></textarea>
   </div>
   <div class="form-group">
-    <input type="submit" name="submit" class="btn btn-primary" value="Publish">
+    <input type="submit" name="submit" class="form-control btn-primary" value="Publish">
   </div>
 </form>
 @endsection
