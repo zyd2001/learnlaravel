@@ -19,12 +19,12 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::latest();
+        // $posts = Post::latest();
         $archives = Post::archives();
 
-        $posts = $posts->filter(request(['month', 'year']));
+        $posts = Post::filter(request(['month', 'year']));
 
-        $posts = $posts->get();
+        $posts = $posts->latest()->get();
         return view('posts.index', compact('posts', 'archives'));
     }
     
@@ -41,5 +41,11 @@ class PostsController extends Controller
     public function show(Post $post)
     {
         return view('posts.show', compact('post'));
+    }
+
+    public function delete(Post $post)
+    {
+        $post->delete();
+        return redirect()->home();
     }
 }

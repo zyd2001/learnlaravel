@@ -18,20 +18,22 @@ Route::get('/posts/create', 'PostsController@create');
 Route::post('/posts', 'PostsController@store');
 
 Route::get('/posts/{post}', 'PostsController@show');
+Route::post('/posts/{post}/delete', 'PostsController@delete');
 
 Route::post('/posts/{post}/comment', 'CommentsController@store');
 
-Route::get('/register', 'RegistrationController@create');
+Route::get('/user/register', 'RegistrationController@create');
 // Route::get('/register', 'RegistrationController@deny');
-Route::post('/register', 'RegistrationController@store');
+Route::post('/user/register', 'RegistrationController@store');
 
-Route::get('/login', 'SessionsController@create')->name('login');
-Route::post('/login', 'SessionsController@store');
+Route::get('/user/login', 'SessionsController@create')->name('login');
+Route::post('/user/login', 'SessionsController@store');
 
-Route::get('/logout', 'SessionsController@destroy');
-Route::post('/logout', 'SessionsController@destroy');
+Route::get('/user/logout', 'SessionsController@destroy');
+Route::post('/user/logout', 'SessionsController@destroy');
 
-Route::controller('/{user}', 'UsersController@create');
+Route::get('/user/{user}', 'UserController@create');
+Route::post('/user/{user}', 'UserController@create');
 
 Route::get('/phpinfo', function () {
     phpinfo();

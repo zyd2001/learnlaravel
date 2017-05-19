@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 
 @section ('content')
-        <form action="/login" method="POST">
+        <form action="/user/login" method="POST">
         {{ csrf_field() }}
         <h1>Login</h1>
         <div class="form-group">
